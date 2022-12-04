@@ -13,7 +13,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const resolvePath = _path => path.resolve(__dirname, _path);
 
 const baseConfig = {
-	entry: resolvePath('../src/index.jsx'),
+	entry: resolvePath('../src/index.tsx'),
 	output: {
 		path: resolvePath('../dist'),
 		filename: '[name].bundle.js'
@@ -28,7 +28,7 @@ const baseConfig = {
 				use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
 			},
 			{
-				test: /\.jsx$/,
+				test: /\.(js|ts)x?$/,
 				use: 'babel-loader'
 			},
 			{

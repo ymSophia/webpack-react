@@ -4,8 +4,10 @@ import './app.css';
 // yarn add @babel/preset-env @babel/preset-react @babel/core @babel/polyfill babel-loader -D
 // yarn add webpack-dev-server -D
 
-export default function App() {
+const App = ():React.ReactElement => {
 	return (
 		<div className="app">This is app</div>
 	)
 }
+
+export default App;
