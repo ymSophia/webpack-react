@@ -6,7 +6,7 @@ import './app.css';
 
 const App = ():React.ReactElement => {
 	return (
-		<div className="app">This is app</div>
+		<div className="app">Trigger pipeline</div>
 	)
 }
 
