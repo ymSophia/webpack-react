@@ -1,6 +1,6 @@
 // src/mocks/handlers.ts
 import { rest, setupWorker } from 'msw';
-import db from './db/index.js';
+import db from './db/index.ts';
 
 const generateJsonResponse = (data, statusCode = 200) => (req, res, ctx) => {
   return res(

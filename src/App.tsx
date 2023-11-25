@@ -3,8 +3,8 @@ import './app.css';
 // yarn add react react-dom
 // yarn add @babel/preset-env @babel/preset-react @babel/core @babel/polyfill babel-loader -D
 // yarn add webpack-dev-server -D
-import { worker } from './mocks/handler.js'
-import { fetchUser } from './services/getUser.js'
+import { worker } from './mocks/handler.ts'
+import { fetchUser } from './services/getUser.ts';
 
 worker.start();
 
@@ -14,7 +14,7 @@ const App = ():React.ReactElement => {
         fetchUser().then(res => setUser(res))
     }, [])
 
-    if (!user.id) return null;
+    if (!user.id) return <></>;
 
 	return (
 		<div className="app">{user.name}</div>
