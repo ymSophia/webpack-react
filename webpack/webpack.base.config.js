@@ -30,19 +30,17 @@ const baseConfig = {
       {
         test: /\.(js|ts)x?$/,
         use: [
-          { loader: "babel-loader" },
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env", "@babel/preset-react"],
+            },
+          },
           {
             loader: "ts-loader",
           },
-          {
-            loader: "eslint-loader",
-            options: {
-              formatter: require("eslint-friendly-formatter"), // 消息提示格式化
-              emitWarning: !config.dev.showEslintErrorsInOverlay, // false
-            },
-          },
         ],
-        include: [resolve("src")], // resolve is root path
+        include: [resolvePath("../src")], // resolve is root path
         exclude: /node_modules/,
       },
       {
@@ -62,6 +60,9 @@ const baseConfig = {
       filename: "[name].[hash:8].css",
     }),
   ],
+  resolve: {
+    extensions: [".js", ".ts", ".tsx", ".jsx"],
+  },
 };
 
 // 区分环境配置，合并配置 yarn add webpack-merge -D
