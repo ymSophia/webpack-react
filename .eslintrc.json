@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint-config-prettier"
+  ],
+  "plugins": ["standard", "react", "@typescript-eslint"],
+  "rules": {
+    "semi": 0,
+    "eol-last": 0,
+    // 这里的 "quotes" 规则采用一个数组，第一个元素是错误级别（可以是 "off"，"warn"，或 "error"），第二个元素是希望使用的引号类型，可以是 "single" 或 "double"。
+    "quotes": ["error", "double"],
+    "react/no-deprecated": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "comma-dangle": ["error", "always-multiline"]
+  }
+}

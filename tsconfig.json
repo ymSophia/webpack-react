@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
+    "module": "CommonJS",
+    "target": "es2021",
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
@@ -16,8 +16,7 @@
     "resolveJsonModule": true,
     "declaration": true,
     "isolatedModules": true,
-    "allowImportingTsExtensions": true
+    "useDefineForClassFields": true
   },
   "include": ["src"]
 }
-

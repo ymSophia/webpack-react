@@ -2,7 +2,7 @@
 // 自动添加前缀
 
 module.exports = {
-	plugins: {
-		autoprefixer: require('autoprefixer')
-	}
-}
+  plugins: {
+    autoprefixer: require("autoprefixer"),
+  },
+};
