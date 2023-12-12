@@ -18,6 +18,9 @@ const baseConfig = {
     path: resolvePath("../dist"),
     filename: "[name].bundle.js",
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       // yarn add style-loader css-loader -D
