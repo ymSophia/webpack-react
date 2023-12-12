@@ -9,20 +9,21 @@ import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
 import Product from "./pages/Product";
 import Header from "./components/Header";
+import "../tailwind.css";
 
 worker.start();
 
 const AppRoutes = (): React.ReactElement => {
   return (
     <BrowserRouter basename="/">
-      <div>
+      <div className="bg-gray-300 px-64 py-10 min-h-screen text-gray-600 flex flex-col">
         {/* 这里可以加很多全局的东西，比如 */}
         {/* <Toast /> */}
         {/* <SessionTimeoutPopup /> */}
         <Header />
         {/* <SideMenu /> */}
         {/* <Footer /> */}
-        <section>
+        <section className="flex-1">
           <div>
             <Routes>
               <Route path="/profile" Component={Profile} />
