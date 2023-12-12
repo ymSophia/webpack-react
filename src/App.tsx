@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import Product from "./pages/Product";
 import Header from "./components/Header";
 import "../tailwind.css";
+import FileCenter from "./pages/FileCenter";
 
 worker.start();
 
@@ -27,6 +28,7 @@ const AppRoutes = (): React.ReactElement => {
           <div>
             <Routes>
               <Route path="/profile" Component={Profile} />
+              <Route path="/file-center" Component={FileCenter} />
               <Route path="/product/:id" Component={Product} />
               <Route Component={NotFound} />
             </Routes>
