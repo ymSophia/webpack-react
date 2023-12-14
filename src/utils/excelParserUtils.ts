@@ -66,18 +66,13 @@ export const convertExcelToJson = <RowData>(file: File): Promise<RowData[]> => {
 
   return new Promise((resolve, reject) => {
     if (file instanceof File) {
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        const data = e.target?.result;
-        const workbook = read(data, { type: "binary" });
-        const sheetName = workbook.SheetNames[0];
-        const worksheet = workbook.Sheets[sheetName];
-        const parsedData = utils.sheet_to_json<RowData>(worksheet, readOptions);
-        resolve(parsedData);
-      };
-
-      reader.readAsBinaryString(file);
+        file.arrayBuffer().then(res => {
+            const workbook = read(res, { type: "binary" });
+            const sheetName = workbook.SheetNames[0];
+            const worksheet = workbook.Sheets[sheetName];
+            const parsedData = utils.sheet_to_json(worksheet, readOptions) as RowData[];
+            resolve(parsedData);
+        })
     } else {
       reject(new Error("invalid file!"));
     }
